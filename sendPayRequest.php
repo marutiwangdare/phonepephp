@@ -54,7 +54,7 @@ print_r($result);
 
 if($result['success']==1){
 
-    $update = $db->query("UPDATE payments SET merchant_transaction_id='$merchantTransactionId', payment_code='$result[code]' WHERE id=$payment_id"); 
+    $update = $db->query("UPDATE payments SET merchant_transaction_id='$merchantTransactionId', payment_code='$result[code]' WHERE id='$payment_id'"); 
 
     $url = $result['data']['instrumentResponse']['redirectInfo']['url'];
     header("Location: $url");
