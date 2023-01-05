@@ -5,8 +5,8 @@
   
 // phonepe configuration 
 define('merchantId', 'PGTESTPAYUAT'); 
-define('redirectUrl', 'http://localhost/phonepe/redirect.php'); 
-define('callbackUrl', 'http://localhost/phonepe/callback.php'); 
+define('redirectUrl', 'http://localhost/phonepephp/redirect.php'); 
+define('callbackUrl', 'http://localhost/phonepephp/callback.php'); 
 define('mobileNumber', '9068145151');
 define('apiEndpoint', '/pg/v1/pay');
 define('saltKey', '099eb0cd-02cf-4e2a-8aca-3e6c6aff0399');
