@@ -22,13 +22,13 @@ if($code == 'PAYMENT_SUCCESS')
         $paymentRow = $prevPaymentResult->fetch_assoc(); 
        // $amount = $paymentRow['amount']; 
 
-        $update = $db->query("UPDATE payments SET transactionId='$transactionId', payment_code='$code', raw_response='$rawResponse'  WHERE merchantTransactionId=$merchantTransactionId"); 
+        $update = $db->query("UPDATE payments SET transactionId='$transactionId', payment_code='$code', raw_response='$rawResponse'  WHERE merchant_transaction_id=$merchantTransactionId"); 
 
     }
 }else{
     
     $merchantTransactionId = $_POST['transactionId']; 
-    $update = $db->query("UPDATE payments SET , payment_code='$code', raw_response='$rawResponse'  WHERE merchantTransactionId=$merchantTransactionId"); 
+    $update = $db->query("UPDATE payments SET , payment_code='$code', raw_response='$rawResponse'  WHERE merchant_transaction_id=$merchantTransactionId"); 
 }
 ?>
 
