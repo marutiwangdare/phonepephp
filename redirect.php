@@ -8,6 +8,7 @@ $code = $_POST['code'] ;
 $rawResponse = json_encode($_POST);
 $code = $_POST['code']; 
 $amount = $_POST['amount']/100; 
+$message = '';
 
 if($code == 'PAYMENT_SUCCESS')
 {
