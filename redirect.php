@@ -8,7 +8,6 @@ $code = $_POST['code'] ;
 $rawResponse = json_encode($_POST);
 $code = $_POST['code']; 
 $amount = $_POST['amount']/100; 
-$message = '';
 
 if($code == 'PAYMENT_SUCCESS')
 {
@@ -35,7 +34,7 @@ if($code == 'PAYMENT_SUCCESS')
 <div class="container">
     <div class="status">
         <?php if($code == 'PAYMENT_SUCCESS'){ ?>
-            <h1 class="success"><?php echo $message?></h1>
+            <h1 class="success"><?php echo $code?></h1>
 			
             <h4>Payment Information</h4>
             <p><b>Reference Number:</b> <?php echo $payment_id; ?></p>
@@ -44,7 +43,7 @@ if($code == 'PAYMENT_SUCCESS')
             <p><b>Payment Status:</b> <?php echo $code; ?></p>
 			
         <?php }else{ ?>
-            <h1 class="error"><?php echo $message?></h1>
+            <h1 class="error"><?php echo $code?></h1>
         <?php } ?>
     </div>
     <a href="index.php" class="btn-link">Back to Products</a>
