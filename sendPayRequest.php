@@ -16,6 +16,8 @@ $payment_id = $db->insert_id;
 
 $merchantTransactionId = 'MTID'.$payment_id.date("Ymdhis"); 
 
+$_SESSION["merchantTransactionId"] = $merchantTransactionId;
+
 $data = [
     "merchantId"=> merchantId,
     "merchantTransactionId" => $merchantTransactionId,
