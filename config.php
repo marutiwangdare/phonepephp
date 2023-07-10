@@ -12,8 +12,8 @@ define('mobileNumber', '9068145151');
 define('apiEndpoint', '/pg/v1/pay');
 define('saltKey', '099eb0cd-02cf-4e2a-8aca-3e6c6aff0399');
 define('saltIndex', '1');
-//define('payApiUrl', 'https://api-preprod.phonepe.com/apis/hermes/pg/v1/pay');
-define('payApiUrl', 'https://api-preprod.phonepe.com/apis/merchant-simulator/pg/v1/pay');
+define('payApiUrl', 'https://api-preprod.phonepe.com/apis/hermes/pg/v1/pay');
+//define('payApiUrl', 'https://api-preprod.phonepe.com/apis/merchant-simulator/pg/v1/pay');
 define('statusApiUrl', 'https://api-preprod.phonepe.com/apis/merchant-simulator/pg/v1/status/'.merchantId.'/');
 
 

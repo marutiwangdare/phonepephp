@@ -5,7 +5,7 @@ require_once('vendor/autoload.php');
 include_once 'config.php'; 
 
 print_r($_POST);
-
+/*
 $raw = "/pg/v1/status/".merchantId."/".$_SESSION["merchantTransactionId"]."".saltKey;
 
 
@@ -21,16 +21,16 @@ $response = $client->request('GET', statusApiUrl.$_SESSION["merchantTransactionI
   ]);
   
 
-$response=json_decode($response->getBody(), true);
+$result=json_decode($response->getBody(), true);
 
-print_r($response);
+print_r($result);
+*/
+$rawResponse = json_encode($_POST);
+$code = $_POST['code']; 
+$amount = $_POST['amount']/100; 
 
-$rawResponse = json_encode($response);
-$code = $response['code']; 
-$amount = $response['data']['amount']/100; 
-
-$merchantTransactionId = $response['data']['merchantTransactionId']; 
-$providerReferenceId = $response['data']['transactionId']; 
+$merchantTransactionId = $_POST['transactionId']; 
+$providerReferenceId = $_POST['providerReferenceId']; 
 
 if($code == 'PAYMENT_SUCCESS')
 {
@@ -62,5 +62,11 @@ if($code == 'PAYMENT_SUCCESS')
     <a href="index.php" class="btn-link">Back to Products</a>
 </div>
 <!--
-    Array ( [success] => 1 [code] => PAYMENT_SUCCESS [message] => Your payment is successful. [data] => Array ( [merchantId] => PGTESTPAYUAT [merchantTransactionId] => MTID3820230524014211 [transactionId] => T2305241712136435449446 [amount] => 10000 [state] => COMPLETED [responseCode] => SUCCESS [paymentInstrument] => Array ( [type] => NETBANKING [pgTransactionId] => 1995464773 [pgServiceTransactionId] => PG2212291607083344934300 [bankTransactionId] => [bankId] => null ) ) )
+    Array ( 
+        [code] => PAYMENT_ERROR 
+        [merchantId] => PGTESTPAYUAT 
+        [transactionId] => MTID839437644220230112020515 
+        [amount] => 100 
+        [param1] => na [param2] => na [param3] => na [param4] => na [param5] => na [param6] => na [param7] => na [param8] => na [param9] => na [param10] => na [param11] => na [param12] => na [param13] => na [param14] => na [param15] => na [param16] => na [param17] => na [param18] => na [param19] => na [param20] => na 
+        [checksum] => eb4b7ba07a93aaa3708b67f63f0553e463e79f34272e3b001226b0d910f36a5b###1 )
 -->
